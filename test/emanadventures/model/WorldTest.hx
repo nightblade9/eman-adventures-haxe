@@ -1,14 +1,15 @@
 package emanadventures.model;
 
-import massive.munit.Assert;
+import haxesharp.test.Assert;
 
 class WorldTest
 {
     @Test
     public function constructorSetsSpecifiedSeed()
     {
-        var world = new World(12345);
-        Assert.isTrue(world.seed == 12345);
+        var expectedSeed = 12345;
+        var actual = new World(expectedSeed);
+        Assert.that(actual.seed, Is.equalTo(expectedSeed));
     }
 
     @Test
@@ -16,8 +17,8 @@ class WorldTest
     {
         var w1 = new World();
         var w2 = new World();
-        Assert.isTrue(w1.seed != null);
-        Assert.isTrue(w1.seed != null);
-        Assert.isTrue(w1.seed != w2.seed);
+        Assert.that(w1.seed, Is.not(null));
+        Assert.that(w2.seed, Is.not(null));
+        Assert.that(w1.seed, Is.not(w2.seed));
     }
 }
