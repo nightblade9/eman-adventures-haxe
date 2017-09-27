@@ -1,5 +1,7 @@
 package emanadventures.model;
 
+import emanadventures.math.SeededRandom;
+
 import haxesharp.test.Assert;
 
 class WorldTest
@@ -20,5 +22,13 @@ class WorldTest
         Assert.that(w1.seed, Is.not(null));
         Assert.that(w2.seed, Is.not(null));
         Assert.that(w1.seed, Is.not(w2.seed));
+    }
+
+    @Test
+    public function constructorCreatesSeededRandom()
+    {
+        Assert.that(SeededRandom.lastInstance, Is.equalTo(null));
+        var world = new World();
+        Assert.that(SeededRandom.lastInstance, Is.not(null));
     }
 }
