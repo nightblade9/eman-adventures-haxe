@@ -8,6 +8,6 @@ install:
   - git clone https://github.com/nightblade9/haxesharp
   - cd haxesharp
   - haxelib dev haxesharp .
-  - haxelib install test.hxml  
+  - haxelib install test.hxml > /dev/null
 script:  
   - haxelib run munit test -coverage -result-exit-code
