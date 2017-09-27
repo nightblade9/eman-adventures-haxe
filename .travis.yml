@@ -8,5 +8,6 @@ install:
   - haxelib git haxesharp https://github.com/nightblade9/haxesharp
   - haxelib install hamcrest
   - haxelib install munit
+  - haxelib install polygonal-core
 script:  
   - haxelib run munit test -coverage -result-exit-code
