@@ -1,5 +1,7 @@
 package emanadventures.model;
 
+import haxesharp.random.Random;
+
 /**
  * A "World" model class. Contains all the data sufficient to construct the entire
  * game world, including the plot, characters, events, items, maps, etc. -- all data.
@@ -8,7 +10,6 @@ package emanadventures.model;
 class World
 {
     public var seed(default, null):Int;
-    private static inline var MaxInt:Int = 2147483647; // 2^31 - 1
 
     public function new(?seed:Int)
     {
@@ -18,8 +19,7 @@ class World
         }
         else
         {
-            // TODO: convert to Random class, NextInt method
-            this.seed = Math.floor(Math.random() * MaxInt);
+            this.seed = new Random().next();
         }
     }
 }
