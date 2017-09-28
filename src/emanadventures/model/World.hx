@@ -1,5 +1,6 @@
 package emanadventures.model;
 
+import emanadventures.model.StoryTemplate;
 import haxesharp.random.Random;
 
 /**
@@ -25,5 +26,6 @@ class World
         }
 
         this.seededRandom = new Random(this.seed);
+        this.storyTemplate = StoryTemplate.generate(this.seededRandom);
     }
 }
