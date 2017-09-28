@@ -28,6 +28,17 @@ class StoryTemplate
             new Event("{Protagonist} recovers the first piece in {Location:2}"),
             new Event("{Protagonist} recovers the second piece in {Location:3}"),
             new Event("{Antagonist} confronts {Antagonist}")
+        ]),
+
+        // S2: the hero, born in a prosperous powerful kingdom founded on uncontrollable power, seeks revenge.
+        new StoryTemplate([
+            new Event("{Protagonist}'s {Kingdom} discovers a powerful magic of unknown origin from {Antagonist:Beast}"),
+            new Event("{Protagonist} walks in on the {NPC:Leader} as they harness the uncontrollable power and gets flung to a far-off land"),
+            new Event("{NPC:Warrior} discovers {Protagonist} and takes him in as a student"),
+            new Event("{Protagonist} trains, becomes a powerful warrior, and leaves {NPC:Warrior}"),
+            new Event("{Protagonist} returns home to discover {Antagonist:Beast} destroyed their {Kingdom}"),
+            new Event("{Protagonist} discovers how to find/summon {Antagonist:Beast}"),
+            new Event("{Protagonist} confronts {Antagonist:Beast}")
         ])
     ];
     
