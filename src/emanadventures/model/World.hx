@@ -1,6 +1,5 @@
 package emanadventures.model;
 
-import emanadventures.math.SeededRandom;
 import haxesharp.random.Random;
 
 /**
@@ -12,7 +11,7 @@ class World
 {
     public var seed(default, null):Int;
     private var storyTemplate:StoryTemplate;
-    private var seededRandom:SeededRandom;
+    private var seededRandom:Random;
 
     public function new(?seed:Int)
     {
@@ -25,6 +24,6 @@ class World
             this.seed = new Random().next();
         }
 
-        this.seededRandom = new SeededRandom(this.seed);
+        this.seededRandom = new Random(this.seed);
     }
 }
