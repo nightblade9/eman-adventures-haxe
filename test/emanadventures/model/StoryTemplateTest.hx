@@ -23,4 +23,19 @@ class StoryTemplateTest
             s2 = StoryTemplate.generate(r);
         } while (s2.events[0] == s1.events[0]);
     }
+
+    @Test
+    public function getUniqueTokensGetsUniqueTokens()
+    {
+        var template = new StoryTemplate([
+            new Event("{Protagonist} discovers {Location}"),
+            new Event("{Protagonist} confronts {Antagonist}")            
+        ]);
+
+        var actual = template.getUniqueTokens();
+        Assert.that(actual.length, Is.equalTo(3));
+        Assert.that(actual.filter(function(s) { return s == "{Protagonist}"; }).length == 1);
+        Assert.that(actual.filter(function(s) { return s == "{Location}"; }).length == 1);
+        Assert.that(actual.filter(function(s) { return s == "{Antagonist}"; }).length == 1);
+    }
 }
