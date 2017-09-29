@@ -1,6 +1,6 @@
 package emanadventures.model;
 
-import emanadventures.model.StoryTemplate;
+import emanadventures.model.templates.StoryTemplate;
 import haxesharp.random.Random;
 
 /**

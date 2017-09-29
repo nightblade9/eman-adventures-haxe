@@ -1,4 +1,4 @@
-package emanadventures.model;
+package emanadventures.model.templates;
 
 class EventTemplate
 {

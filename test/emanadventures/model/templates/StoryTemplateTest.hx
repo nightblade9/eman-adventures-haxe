@@ -1,9 +1,10 @@
-package emanadventures.model;
+package emanadventures.model.templates;
 
-import emanadventures.model.StoryTemplate;
+import emanadventures.model.templates.StoryTemplate;
 import haxesharp.random.Random;
 import haxesharp.test.Assert;
 
+@:access(emanadventures.model.templates.StoryTemplate)
 class StoryTemplateTest
 {
     @Test

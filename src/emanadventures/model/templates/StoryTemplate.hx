@@ -1,4 +1,4 @@
-package emanadventures.model;
+package emanadventures.model.templates;
 
 import haxesharp.random.Random;
 import haxesharp.text.Regex;
@@ -60,7 +60,12 @@ class StoryTemplate
         this.events = events;
     }
 
-    public function getUniqueTokens():Array<String>
+    public function createStory(seededRandom:Random):Void
+    {
+        
+    }
+
+    private function getUniqueTokens():Array<String>
     {
         var toReturn = new Array<String>();
 
