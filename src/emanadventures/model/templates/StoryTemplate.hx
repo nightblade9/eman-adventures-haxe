@@ -14,9 +14,9 @@ class StoryTemplate
 
      // Event grammar
     // {Protagonist} means the main player character
-    // {Antagonist} means the final villain
     // {Hero} means a player character
-    // {Enemy} means a significant enemy character
+    // {Antagonist} means the final villain
+    // {Villain} means a significant enemy character
     // The same token, when repeated, refers to the same one instance of that thing.
     //
     // {Token:Tag:N} (tag can be empty, N is if you want two locations: {Location} and {Location::2})
@@ -24,14 +24,17 @@ class StoryTemplate
     private static var ALL_TEMPLATES:Array<StoryTemplate> =
     [
         // S1: the legendary hero, struck down at the height of power, recovers and overcomes the villain
+        // TODO: these probably need to be distilled down into further events
+        // eg. Fight(Protagonist, Villan); Discover(Item, Location); Travel(Home); Destroyed(Village)
+        // From there, we know specific stuff (which villain? what text do we show in that dialog?)
         new StoryTemplate([
-            new EventTemplate("{NPC:Leader} sends {Protagonist} to fight {Enemy General} and recover the {Artifact:Part}"),
-            new EventTemplate("{Protagonist} discovers {Artifact:Part} en route, in {Location:Remote}"),
+            new EventTemplate("{NPC:Leader} sends {Protagonist} to fight {Villain} and recover the {Artifact:MultiPart}"),
+            new EventTemplate("{Protagonist} discovers {Artifact:MultiPart} en route, in {Location:Remote}"),
             new EventTemplate("{Protagonist} meets {NPC} in a distant land, who rebuilds {Artifact}"),
             new EventTemplate("{Antagonist} ambushes {Protagonist} and breaks the {Artifact} into two pieces"),
             new EventTemplate("{Protagonist} recovers the first piece in {Location::2}"),
             new EventTemplate("{Protagonist} recovers the second piece in {Location::3}"),
-            new EventTemplate("{Antagonist} confronts {Antagonist}")
+            new EventTemplate("{Protagonist} confronts {Antagonist}")
         ]),
 
         // S2: the hero, born in a prosperous powerful kingdom founded on uncontrollable power, seeks revenge.
