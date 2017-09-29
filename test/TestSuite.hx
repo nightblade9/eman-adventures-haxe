@@ -1,8 +1,8 @@
 import massive.munit.TestSuite;
 
-import emanadventures.model.EventTest;
-import emanadventures.model.StoryTemplateTest;
+import emanadventures.model.EventTemplateTest;
 import emanadventures.model.WorldTest;
+import emanadventures.model.StoryTemplateTest;
 
 /**
  * Auto generated Test Suite for MassiveUnit.
@@ -16,8 +16,8 @@ class TestSuite extends massive.munit.TestSuite
 	{
 		super();
 
-		add(emanadventures.model.EventTest);
-		add(emanadventures.model.StoryTemplateTest);
+		add(emanadventures.model.EventTemplateTest);
 		add(emanadventures.model.WorldTest);
+		add(emanadventures.model.StoryTemplateTest);
 	}
 }

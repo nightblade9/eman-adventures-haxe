@@ -25,28 +25,28 @@ class StoryTemplate
     [
         // S1: the legendary hero, struck down at the height of power, recovers and overcomes the villain
         new StoryTemplate([
-            new Event("{NPC:Leader} sends {Protagonist} to fight {Enemy General} and recover the {Artifact:Part}"),
-            new Event("{Protagonist} discovers {Artifact:Part} en route, in {Location:Remote}"),
-            new Event("{Protagonist} meets {NPC} in a distant land, who rebuilds {Artifact}"),
-            new Event("{Antagonist} ambushes {Protagonist} and breaks the {Artifact} into two pieces"),
-            new Event("{Protagonist} recovers the first piece in {Location::2}"),
-            new Event("{Protagonist} recovers the second piece in {Location::3}"),
-            new Event("{Antagonist} confronts {Antagonist}")
+            new EventTemplate("{NPC:Leader} sends {Protagonist} to fight {Enemy General} and recover the {Artifact:Part}"),
+            new EventTemplate("{Protagonist} discovers {Artifact:Part} en route, in {Location:Remote}"),
+            new EventTemplate("{Protagonist} meets {NPC} in a distant land, who rebuilds {Artifact}"),
+            new EventTemplate("{Antagonist} ambushes {Protagonist} and breaks the {Artifact} into two pieces"),
+            new EventTemplate("{Protagonist} recovers the first piece in {Location::2}"),
+            new EventTemplate("{Protagonist} recovers the second piece in {Location::3}"),
+            new EventTemplate("{Antagonist} confronts {Antagonist}")
         ]),
 
         // S2: the hero, born in a prosperous powerful kingdom founded on uncontrollable power, seeks revenge.
         new StoryTemplate([
-            new Event("{Protagonist}'s {Kingdom} discovers a powerful magic of unknown origin from {Antagonist:Beast}"),
-            new Event("{Protagonist} walks in on the {NPC:Leader} as they harness the uncontrollable power and gets flung to a far-off land"),
-            new Event("{NPC:Warrior} discovers {Protagonist} and takes him in as a student"),
-            new Event("{Protagonist} trains, becomes a powerful warrior, and leaves {NPC:Warrior}"),
-            new Event("{Protagonist} returns home to discover {Antagonist:Beast} destroyed their {Kingdom}"),
-            new Event("{Protagonist} discovers how to find/summon {Antagonist:Beast}"),
-            new Event("{Protagonist} confronts {Antagonist:Beast}")
+            new EventTemplate("{Protagonist}'s {Kingdom} discovers a powerful magic of unknown origin from {Antagonist:Beast}"),
+            new EventTemplate("{Protagonist} walks in on the {NPC:Leader} as they harness the uncontrollable power and gets flung to a far-off land"),
+            new EventTemplate("{NPC:Warrior} discovers {Protagonist} and takes him in as a student"),
+            new EventTemplate("{Protagonist} trains, becomes a powerful warrior, and leaves {NPC:Warrior}"),
+            new EventTemplate("{Protagonist} returns home to discover {Antagonist:Beast} destroyed their {Kingdom}"),
+            new EventTemplate("{Protagonist} discovers how to find/summon {Antagonist:Beast}"),
+            new EventTemplate("{Protagonist} confronts {Antagonist:Beast}")
         ])
     ];
     
-    public var events(default, null):Array<Event>;
+    public var events(default, null):Array<EventTemplate>;
 
     public static function generate(seededRandom:Random):StoryTemplate
     {
@@ -55,7 +55,7 @@ class StoryTemplate
         return storyTemplate;
     }
 
-    public function new(events:Array<Event>)
+    public function new(events:Array<EventTemplate>)
     {
         this.events = events;
     }

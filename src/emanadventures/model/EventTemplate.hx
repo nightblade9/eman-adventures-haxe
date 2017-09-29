@@ -1,6 +1,6 @@
 package emanadventures.model;
 
-class Event
+class EventTemplate
 {
     public var data(default, null):String;
 

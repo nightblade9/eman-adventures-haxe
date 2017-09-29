@@ -28,8 +28,8 @@ class StoryTemplateTest
     public function getUniqueTokensGetsUniqueTokens()
     {
         var template = new StoryTemplate([
-            new Event("{Protagonist} discovers {Location}"),
-            new Event("{Protagonist} confronts {Antagonist}")            
+            new EventTemplate("{Protagonist} discovers {Location}"),
+            new EventTemplate("{Protagonist} confronts {Antagonist}")            
         ]);
 
         var actual = template.getUniqueTokens();
