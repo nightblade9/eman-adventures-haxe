@@ -65,7 +65,7 @@ class StoryTemplate
         
     }
 
-    private function getUniqueTokens():Array<String>
+    public function getTokens():Array<String>
     {
         var toReturn = new Array<String>();
 

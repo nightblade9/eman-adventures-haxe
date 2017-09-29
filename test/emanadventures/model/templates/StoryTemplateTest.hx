@@ -4,7 +4,6 @@ import emanadventures.model.templates.StoryTemplate;
 import haxesharp.random.Random;
 import haxesharp.test.Assert;
 
-@:access(emanadventures.model.templates.StoryTemplate)
 class StoryTemplateTest
 {
     @Test
@@ -26,17 +25,27 @@ class StoryTemplateTest
     }
 
     @Test
-    public function getUniqueTokensGetsUniqueTokens()
+    public function getTokensGetsUniqueTokens()
     {
         var template = new StoryTemplate([
             new EventTemplate("{Protagonist} discovers {Location}"),
+            new EventTemplate("{Protagonist} discovers {NPC}"),
+            new EventTemplate("{Protagonist} discovers {NPC::2}"),
+            new EventTemplate("{Protagonist} discovers {NPC:Leader}"),
+            new EventTemplate("{Protagonist} discovers {NPC:Warrior}"),
             new EventTemplate("{Protagonist} confronts {Antagonist}")            
         ]);
 
-        var actual = template.getUniqueTokens();
-        Assert.that(actual.length, Is.equalTo(3));
+        var actual = template.getTokens();
+        Assert.that(actual.length, Is.equalTo(7)); // Protagonist is repeated
         Assert.that(actual.filter(function(s) { return s == "{Protagonist}"; }).length == 1);
         Assert.that(actual.filter(function(s) { return s == "{Location}"; }).length == 1);
         Assert.that(actual.filter(function(s) { return s == "{Antagonist}"; }).length == 1);
+        // Tags and numbers are treated as unique
+        Assert.that(actual.filter(function(s) { return s == "{NPC}"; }).length == 1);
+        Assert.that(actual.filter(function(s) { return s == "{NPC::2}"; }).length == 1);
+        Assert.that(actual.filter(function(s) { return s == "{NPC:Leader}"; }).length == 1);
+        Assert.that(actual.filter(function(s) { return s == "{NPC:Warrior}"; }).length == 1);
+        
     }
 }
