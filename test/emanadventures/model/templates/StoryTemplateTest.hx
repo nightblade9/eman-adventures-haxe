@@ -1,6 +1,7 @@
 package emanadventures.model.templates;
 
 import emanadventures.model.templates.StoryTemplate;
+using haxesharp.collections.Linq;
 import haxesharp.random.Random;
 import haxesharp.test.Assert;
 
@@ -38,14 +39,14 @@ class StoryTemplateTest
 
         var actual = template.getTokens();
         Assert.that(actual.length, Is.equalTo(7)); // Protagonist is repeated
-        Assert.that(actual.filter(function(s) { return s == "{Protagonist}"; }).length == 1);
-        Assert.that(actual.filter(function(s) { return s == "{Location}"; }).length == 1);
-        Assert.that(actual.filter(function(s) { return s == "{Antagonist}"; }).length == 1);
+        Assert.that(actual.where((s) => s == "{Protagonist}").length == 1);
+        Assert.that(actual.where((s) => s == "{Location}").length == 1);
+        Assert.that(actual.where((s) => s == "{Antagonist}").length == 1);
         // Tags and numbers are treated as unique
-        Assert.that(actual.filter(function(s) { return s == "{NPC}"; }).length == 1);
-        Assert.that(actual.filter(function(s) { return s == "{NPC::2}"; }).length == 1);
-        Assert.that(actual.filter(function(s) { return s == "{NPC:Leader}"; }).length == 1);
-        Assert.that(actual.filter(function(s) { return s == "{NPC:Warrior}"; }).length == 1);
+        Assert.that(actual.where((s) => s == "{NPC}").length == 1);
+        Assert.that(actual.where((s) => s == "{NPC::2}").length == 1);
+        Assert.that(actual.where((s) => s == "{NPC:Leader}").length == 1);
+        Assert.that(actual.where((s) => s == "{NPC:Warrior}").length == 1);
         
     }
 }
