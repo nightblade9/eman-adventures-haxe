@@ -4,6 +4,7 @@ import emanadventures.model.templates.StoryTemplate;
 import emanadventures.model.Artifact;
 import emanadventures.model.Story;
 
+using haxesharp.collections.Linq;
 import haxesharp.random.Random;
 import haxesharp.text.Regex;
 import haxesharp.exceptions.InvalidOperationException;
@@ -41,8 +42,9 @@ class StoryGenerator
 
     public function generate(template:StoryTemplate):Story
     {
+        // TODO: make this a hash of TokenType => List
+        // Eg. "{Artifact}" => Array<Artifact>
         var storyArtifacts = new Array<Artifact>();
-        var seenArtifactNumbers = new Map<Int, Artifact>();
         
         var tokens:Array<String> = template.getTokens();
         for (token in tokens)
@@ -55,24 +57,16 @@ class StoryGenerator
                 var tag = match.groups[1]; // eg. Beast
                 var rawNumber = match.groups[2]; // eg. 2
 
-                var instanceNumber:Int = 0;
+                var instanceNumber:Int = 1;
                 if (rawNumber != null)
                 {
                     instanceNumber = Std.parseInt(rawNumber);
                 }
 
-                // TODO: do this in a less terrible way. If we're told to generate
-                // an artifact, make sure this is the first time we saw that instance,
-                // and make sure we pick a unique artifact.
-                if (type == "Artifact" && !seenArtifactNumbers.exists(instanceNumber))
+                if (type == "Artifact" && storyArtifacts.length < instanceNumber)
                 {
-                    var artifact = this.artifactRepository[seededRandom.next(this.artifactRepository.length)];
-                    while (storyArtifacts.indexOf(artifact) > -1)
-                    {
-                        artifact = this.artifactRepository[seededRandom.next(this.artifactRepository.length)];
-                    }
+                    var artifact = this.artifactRepository.where((a) => !storyArtifacts.contains(a)).first();
                     storyArtifacts.push(artifact);
-                    seenArtifactNumbers.set(instanceNumber, artifact);
                 }
             }
             else
