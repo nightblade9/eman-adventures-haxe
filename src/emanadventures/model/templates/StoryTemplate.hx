@@ -23,29 +23,35 @@ class StoryTemplate
     // TODO: convert to data
     private static var ALL_TEMPLATES:Array<StoryTemplate> =
     [
-        // S1: the legendary hero, struck down at the height of power, recovers and overcomes the villain
         // TODO: these probably need to be distilled down into further events
         // eg. Fight(Protagonist, Villan); Discover(Item, Location); Travel(Home); Destroyed(Village)
         // From there, we know specific stuff (which villain? what text do we show in that dialog?)
+
+        // Legendary hero finds and builds/recovers the artifact which he uses to confront and defeat the antagonist.
         new StoryTemplate([
             new EventTemplate("{NPC:Leader} sends {Protagonist} to fight {Villain} and recover the {Artifact:MultiPart}"),
             new EventTemplate("{Protagonist} discovers {Artifact:MultiPart} en route, in {Location:Remote}"),
             new EventTemplate("{Protagonist} meets {NPC} in a distant land, who rebuilds {Artifact}"),
+            // Antagonist wants world domination (dunya). Good guy says it will not end well in this life or the next.
+            // Antagonist insists, and breaks the artifact.
             new EventTemplate("{Antagonist} ambushes {Protagonist} and breaks the {Artifact} into two pieces"),
             new EventTemplate("{Protagonist} recovers the first piece in {Location::2}"),
             new EventTemplate("{Protagonist} recovers the second piece in {Location::3}"),
             new EventTemplate("{Protagonist} confronts {Antagonist}")
+            // Epilogue: Protagonist returns to {NPC:Leader}, the world is safe once more
         ]),
 
-        // S2: the hero, born in a prosperous powerful kingdom founded on uncontrollable power, seeks revenge.
+        // Hero's family member gets kidnapped; he follows, unwittingly unlocking a power for the antagonist.
         new StoryTemplate([
-            new EventTemplate("{Protagonist}'s {Kingdom} discovers a powerful magic of unknown origin from {Antagonist:Beast}"),
-            new EventTemplate("{Protagonist} walks in on the {NPC:Leader} as they harness the uncontrollable power and gets flung to a far-off land"),
-            new EventTemplate("{NPC:Warrior} discovers {Protagonist} and takes him in as a student"),
-            new EventTemplate("{Protagonist} trains, becomes a powerful warrior, and leaves {NPC:Warrior}"),
-            new EventTemplate("{Protagonist} returns home to discover {Antagonist:Beast} destroyed their {Kingdom}"),
-            new EventTemplate("{Protagonist} discovers how to find/summon {Antagonist:Beast}"),
-            new EventTemplate("{Protagonist} confronts {Antagonist:Beast}")
+            new EventTemplate("{Protagonist} wakes up to find his family member {NPC} kidnapped by {Antagonist}"),
+            new EventTemplate("{Protagonist} follows {Antagonist} to {Location::1}, where he finds {Artifact}"),
+            // Protagonist uses self-reminders and du'a to help him when he falls short
+            new EventTemplate("{Protagonist} follows {Antagonist} to {Location::2}, where his faith triumphs over {Villain:Beast}"),
+            // Location 3 is only reachable through location 2; Antagonist needed him to slay the beast.
+            // Having found the artifact in location 1, Antagonist is now in a position to unlock it's power ...
+            new EventTemplate("{Protagonist} follows {Antagonist} to {Location::3}, where {Antagonist} unlocks {Artifact}"),            
+            new EventTemplate("{Protagonist} confronts {Antagonist}")
+            // Epilogue: Antagonist is confused why he lost. Protagonist says something about: the power of eman and du'a.
         ])
     ];
     
