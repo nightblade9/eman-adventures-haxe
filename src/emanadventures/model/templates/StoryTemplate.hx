@@ -41,6 +41,7 @@ class StoryTemplate
         new StoryTemplate([
             new EventTemplate("{Protagonist}'s {Kingdom} discovers a powerful magic of unknown origin from {Antagonist:Beast}"),
             new EventTemplate("{Protagonist} walks in on the {NPC:Leader} as they harness the uncontrollable power and gets flung to a far-off land"),
+            // ^^^ prologue ^^^
             new EventTemplate("{NPC:Warrior} discovers {Protagonist} and takes him in as a student"),
             new EventTemplate("{Protagonist} trains, becomes a powerful warrior, and leaves {NPC:Warrior}"),
             new EventTemplate("{Protagonist} returns home to discover {Antagonist:Beast} destroyed their {Kingdom}"),
