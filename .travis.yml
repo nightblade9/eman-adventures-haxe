@@ -6,7 +6,6 @@ hxml:
   - test.hxml
 install:
   - haxelib git haxesharp https://github.com/nightblade9/haxesharp
-  - haxelib install haxesharp
   - haxelib install munit
 script:  
   - haxelib run munit test -coverage -result-exit-code
