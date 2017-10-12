@@ -17,6 +17,9 @@ class StoryTemplate
     // {Hero} means a player character
     // {Antagonist} means the final villain
     // {Villain} means a significant enemy character
+    // {Beast} is a neutral beast, like a dragon.
+    // {NPC} is a human NPC of some sort
+
     // The same token, when repeated, refers to the same one instance of that thing.
     //
     // {Token:Tag:N} (tag can be empty, N is if you want two locations: {Location} and {Location::2})
@@ -37,21 +40,26 @@ class StoryTemplate
             new EventTemplate("{Antagonist} ambushes {Protagonist} and breaks the {Artifact} into two pieces"),
             new EventTemplate("{Protagonist} recovers the first piece in {Location::2}"),
             new EventTemplate("{Protagonist} recovers the second piece in {Location::3}"),
-            new EventTemplate("{Protagonist} confronts {Antagonist}")
-            // Epilogue: Protagonist returns to {NPC:Leader}, the world is safe once more
+            new EventTemplate("{Protagonist} confronts {Antagonist}"),
+            new EventTemplate("Epilogue: {Protagonist} returns to {NPC:Leader}, the world is safe once more")
         ]),
 
         // Hero's family member gets kidnapped; he follows, unwittingly unlocking a power for the antagonist.
         new StoryTemplate([
             new EventTemplate("{Protagonist} wakes up to find his family member {NPC} kidnapped by {Antagonist}"),
-            new EventTemplate("{Protagonist} follows {Antagonist} to {Location::1}, where he finds {Artifact}"),
             // Protagonist uses self-reminders and du'a to help him when he falls short
-            new EventTemplate("{Protagonist} follows {Antagonist} to {Location::2}, where his faith triumphs over {Villain:Beast}"),
+            new EventTemplate("{Protagonist} follows {Antagonist} to {Location::1}, he triumphs over {Beast}"),
+            // Location 2 is only reachable through location 1. Protagonist unlocks, antagonist steals, the artifact.
+            new EventTemplate("{Protagonist} follows {Antagonist} to {Location::2}, and unlocks {Artifact}"),
             // Location 3 is only reachable through location 2; Antagonist needed him to slay the beast.
+            // T'was a guardian of the key (artifact).
             // Having found the artifact in location 1, Antagonist is now in a position to unlock it's power ...
-            new EventTemplate("{Protagonist} follows {Antagonist} to {Location::3}, where {Antagonist} unlocks {Artifact}"),            
-            new EventTemplate("{Protagonist} confronts {Antagonist}")
-            // Epilogue: Antagonist is confused why he lost. Protagonist says something about: the power of eman and du'a.
+            new EventTemplate("{Protagonist} follows {Antagonist} to {Location:Special:3}, where {Antagonist} uses {Artifact} on {NPC}, who turns into {Beast::2}"),
+            // Potential plot twists:
+            // 1) Antagonist rides the Beast and both battle you
+            // 2) Beast eats Antagonist and then battles you
+            // 3) Antagonist escapes while you fight Beast
+            new EventTemplate("{Protagonist} confronts {Antagonist}")            
         ])
     ];
     
