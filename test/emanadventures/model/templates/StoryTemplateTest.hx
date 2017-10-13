@@ -3,8 +3,10 @@ package emanadventures.model.templates;
 import emanadventures.model.templates.StoryTemplate;
 using haxesharp.collections.Linq;
 import haxesharp.random.Random;
+using haxesharp.text.StringExtensions;
 import haxesharp.test.Assert;
 
+@:access(emanadventures.model.templates.StoryTemplate)
 class StoryTemplateTest
 {
     @Test
@@ -47,6 +49,36 @@ class StoryTemplateTest
         Assert.that(actual.where((s) => s == "{NPC::2}").length == 1);
         Assert.that(actual.where((s) => s == "{NPC:Leader}").length == 1);
         Assert.that(actual.where((s) => s == "{NPC:Warrior}").length == 1);
+    }
+
+    @Test
+    public function allStoryTokensHaveLocations()
+    {
+
+        for (template in StoryTemplate.ALL_TEMPLATES)
+        {
+            for (event in template.events)
+            {
+                if (!containsSpecialToken(event.data))
+                {
+                    Assert.that(event.data.contains("{Location"));
+                }
+            }
+        }
+    }
+
+    private function containsSpecialToken(eventData:String):Bool
+    {
+        var specialTokens = ["Final Confrontation", "Epilogue:"];
         
+        for (special in specialTokens)
+        {
+            if (eventData.contains(special))
+            {
+                return true;
+            }
+        }
+
+        return false;
     }
 }
