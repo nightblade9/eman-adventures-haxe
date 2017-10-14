@@ -4,7 +4,10 @@
 -lib polygonal-core
 -lib haxesharp
 -lib flixel
--cp src
 
+-cp src
 -cp test
+
+--remap flash:openfl
+
 -neko build/neko_test.n

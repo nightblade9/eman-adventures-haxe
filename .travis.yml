@@ -6,7 +6,7 @@ hxml:
   - test.hxml
 install:
   - haxelib git haxesharp https://github.com/nightblade9/haxesharp
-  - haxelib install munit
+  - haxelib install munit > /dev/null
   - haxelib install flixel > /dev/null
   - haxelib install flixel-addons >/dev/null
 script:  
