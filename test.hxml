@@ -4,6 +4,7 @@
 -lib polygonal-core
 -lib haxesharp
 -lib helix
+-lib flixel
 
 -cp src
 -cp test
