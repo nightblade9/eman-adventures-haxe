@@ -5,10 +5,10 @@ neko: "2.0.0"
 hxml:
   - test.hxml
 install:
-  - haxelib git helix https://github.com/nightblade9/helix
-  - haxelib git haxesharp https://github.com/nightblade9/haxesharp
-  - haxelib install munit > /dev/null
   - haxelib install flixel > /dev/null
   - haxelib install flixel-addons >/dev/null
+  - haxelib git helix https://github.com/nightblade9/helix
+  - haxelib git haxesharp https://github.com/nightblade9/haxesharp
+  - haxelib install munit > /dev/null  
 script:  
   - haxelib run munit test -coverage -result-exit-code
