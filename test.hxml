@@ -9,6 +9,13 @@
 -cp src
 -cp test
 
+###
+# https://github.com/massiveinteractive/MassiveUnit/issues/138
 --remap flash:openfl
+# define KEYBOARD so FlxG.keys is valid
+--macro flixel.system.macros.FlxDefines.run()
+# define FLX_GAMEINPUT_API
+-D openfl_next
+###
 
 -neko build/neko_test.n

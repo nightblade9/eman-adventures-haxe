@@ -11,4 +11,4 @@ install:
   - haxelib git haxesharp https://github.com/nightblade9/haxesharp
   - haxelib install munit > /dev/null  
 script:  
-  - haxelib run munit test #-coverage -result-exit-code
+  - haxelib run munit test -coverage -result-exit-code
