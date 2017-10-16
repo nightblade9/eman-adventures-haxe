@@ -1,5 +1,6 @@
 package emanadventures.states;
 
+import emanadventures.io.JsonReader;
 import flixel.util.FlxColor;
 import helix.core.HelixState;
 import helix.core.HelixSprite;
@@ -12,13 +13,7 @@ class HouseState extends HelixState
 		this.bgColor = FlxColor.BROWN;
 
 		var player = new HelixSprite("assets/images/player.png").moveWithKeyboard(100).move(200, 200);
-		var text = openfl.Assets.getText("assets/data/home.json");
-
-		// Remove comments
-        var regex = new EReg("//.*", "g");
-		text = regex.replace(text, "");
-
-		var json = haxe.Json.parse(text);
+		var json = JsonReader.readJsonAsset("assets/data/home.json");
 		var wallSizes:Array<Array<Int>> = json.walls;
 
 		for (wallSize in wallSizes)

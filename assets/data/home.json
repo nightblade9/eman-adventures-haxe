@@ -1,8 +1,15 @@
 {
     "walls": [
         [0, 0, "horizontal"], // top
-        [0, 434, "horizontal"],  // bottom
+        [0, 434, "horizontal-half"],  // bottom-left
+        [472, 434, "horizontal-half"],  // bottom-right
         [0, 0, "vertical"], // left
         [784, 0, "vertical"] // right
-    ]
+    ],
+    "exit":
+    {
+        "x": 328,
+        "y": 450,
+        "width": 144        
+    }
 }

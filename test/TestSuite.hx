@@ -1,6 +1,7 @@
 import massive.munit.TestSuite;
 
 import emanadventures.generators.StoryGeneratorTest;
+import emanadventures.io.JsonReaderTest;
 import emanadventures.model.ArtifactTest;
 import emanadventures.model.templates.EventTemplateTest;
 import emanadventures.model.templates.StoryTemplateTest;
@@ -19,6 +20,7 @@ class TestSuite extends massive.munit.TestSuite
 		super();
 
 		add(emanadventures.generators.StoryGeneratorTest);
+		add(emanadventures.io.JsonReaderTest);
 		add(emanadventures.model.ArtifactTest);
 		add(emanadventures.model.templates.EventTemplateTest);
 		add(emanadventures.model.templates.StoryTemplateTest);
