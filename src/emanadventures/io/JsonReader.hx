@@ -1,6 +1,7 @@
 package emanadventures.io;
 
 import haxe.Json;
+import haxesharp.text.Regex;
 
 class JsonReader
 {
@@ -15,6 +16,6 @@ class JsonReader
 
     public static function removeComments(json:String):String
     {
-        return new EReg(commentRegex, "g").replace(json, "");
+        return new Regex(commentRegex, "g").replace(json, "");
     }
 }

@@ -1,11 +1,11 @@
 import massive.munit.TestSuite;
 
-import emanadventures.generators.StoryGeneratorTest;
 import emanadventures.io.JsonReaderTest;
+import emanadventures.generators.StoryGeneratorTest;
 import emanadventures.model.ArtifactTest;
+import emanadventures.model.WorldTest;
 import emanadventures.model.templates.EventTemplateTest;
 import emanadventures.model.templates.StoryTemplateTest;
-import emanadventures.model.WorldTest;
 
 /**
  * Auto generated Test Suite for MassiveUnit.
@@ -19,11 +19,11 @@ class TestSuite extends massive.munit.TestSuite
 	{
 		super();
 
-		add(emanadventures.generators.StoryGeneratorTest);
 		add(emanadventures.io.JsonReaderTest);
+		add(emanadventures.generators.StoryGeneratorTest);
 		add(emanadventures.model.ArtifactTest);
+		add(emanadventures.model.WorldTest);
 		add(emanadventures.model.templates.EventTemplateTest);
 		add(emanadventures.model.templates.StoryTemplateTest);
-		add(emanadventures.model.WorldTest);
 	}
 }
