@@ -1,5 +1,6 @@
 package emanadventures.states;
 
+import flixel.FlxG;
 import flixel.util.FlxColor;
 import helix.core.HelixState;
 import helix.core.HelixSprite;
@@ -7,7 +8,13 @@ import helix.core.HelixSprite;
 class AreaSelectState extends HelixState
 {
     private static inline var PADDING:Int = 64;
-    private var knownAreas = ["Silver Forest", "Ice Temple", "Cave"];
+
+    // TODO: replace with real classes
+    private var knownAreas = [
+        { name: "Silver Forest", bgColor: 0xFF999999 },
+        { name: "Ice Temple", bgColor: 0xFFaaccee },
+        { name: "Cave", bgColor: 0xFF553311 }
+    ];
 
 	override public function create():Void
 	{
@@ -19,7 +26,8 @@ class AreaSelectState extends HelixState
 
             new HelixSprite("assets/images/area-icon.png").move(x, 150)
             .onClick(function() {
-                trace("Clicked on " + i);
+                var area = knownAreas[i];
+                FlxG.switchState(new MapState(area.bgColor));
             });
         }
 	}
@@ -28,4 +36,9 @@ class AreaSelectState extends HelixState
 	{
 		super.update(elapsedSeconds);
     }
+}
+
+typedef Area = {
+    var name:String;
+    var bgColor:FlxColor;
 }
