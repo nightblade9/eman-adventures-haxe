@@ -1,6 +1,7 @@
 package emanadventures.states;
 
 import emanadventures.io.JsonReader;
+import flixel.FlxG;
 import flixel.util.FlxColor;
 import helix.core.HelixState;
 import helix.core.HelixSprite;
@@ -42,7 +43,7 @@ class HomeState extends HelixState
 		if (player.x >= exit.x && player.x <= exit.x + exit.width && 
 			player.y >= exit.y && player.y <= exit.y + exit.height)
 		{
-			trace(Date.now());	
+			FlxG.switchState(new AreaSelectState());
 		}
 	}
 }
