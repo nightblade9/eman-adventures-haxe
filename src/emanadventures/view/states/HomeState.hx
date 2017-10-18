@@ -1,6 +1,7 @@
-package emanadventures.states;
+package emanadventures.view.states;
 
 import emanadventures.io.JsonReader;
+import emanadventures.view.entities.MapPlayer;
 import flixel.FlxG;
 import flixel.util.FlxColor;
 import helix.core.HelixState;
@@ -8,7 +9,7 @@ import helix.core.HelixSprite;
 
 class HomeState extends HelixState
 {
-	private var player:HelixSprite;
+	private var player:MapPlayer;
 	private var exit:Dynamic; // JSON
 
 	override public function create():Void
@@ -16,7 +17,7 @@ class HomeState extends HelixState
 		super.create();
 		this.bgColor = FlxColor.BROWN;
 
-		this.player = new HelixSprite("assets/images/player.png").moveWithKeyboard(100);
+		this.player = new MapPlayer();
 		// Start in the middle of the room
 		player.move((this.width - player.width) / 2, (this.height - player.height) / 2);
 		var json = JsonReader.readJsonAsset("assets/data/home.json");

@@ -1,4 +1,4 @@
-package emanadventures.states;
+package emanadventures.view.states;
 
 import flixel.FlxG;
 import flixel.util.FlxColor;
