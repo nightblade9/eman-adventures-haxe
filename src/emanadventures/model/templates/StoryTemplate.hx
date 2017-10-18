@@ -31,11 +31,9 @@ class StoryTemplate
     // TODO: convert to data
     private static var ALL_TEMPLATES:Array<StoryTemplate> =
     [
-        // TODO: these probably need to be distilled down into further events
-        // eg. Fight(Protagonist, Villan); Discover(Item, Location); Travel(Home); Destroyed(Village)
-        // From there, we know specific stuff (which villain? what text do we show in that dialog?)
-
-        // Legendary hero finds and builds/recovers the artifact which he uses to confront and defeat the antagonist.
+        // Theme and story: whoever kills a life, killed all humanity; whoever saves one, saved humanity.
+        // Here's a villain who's targetting women and children, like Firawn; he needs to be stopped.
+        // Specifically, target the weapon he's using.
         new StoryTemplate([
             new EventTemplate("{NPC:Leader} sends {Protagonist} to fight {Villain} at {Location::1} and recover the {Artifact:MultiPart}"),
             new EventTemplate("{Protagonist} discovers {Artifact:MultiPart} en route, in {Location:Remote:2}"),
@@ -49,9 +47,9 @@ class StoryTemplate
             new EventTemplate("Epilogue: {Protagonist} returns to {NPC:Leader}, the world is safe once more")
         ]),
 
-        // Hero's family member gets kidnapped; he follows, unwittingly unlocking a power for the antagonist.
+        // Theme and story: your mother, your mother, your mother, and then your father
         new StoryTemplate([
-            new EventTemplate("{Protagonist} wakes up at {Location::1} to find his family member {NPC} kidnapped by {Antagonist}"),
+            new EventTemplate("{Protagonist} wakes up at {Location::1} to find his mother {NPC:Woman} kidnapped by {Antagonist}"),
             // Protagonist uses self-reminders and du'a to help him when he falls short
             new EventTemplate("{Protagonist} follows {Antagonist} to {Location::2}, he triumphs over {Beast}"),
             // Location 2 is only reachable through location 1. Protagonist unlocks, antagonist steals, the artifact.
