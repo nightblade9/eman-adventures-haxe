@@ -1,5 +1,6 @@
 package emanadventures.model;
 
+import emanadventures.model.MapArea;
 import emanadventures.model.templates.StoryTemplate;
 import haxesharp.random.Random;
 
@@ -10,7 +11,16 @@ import haxesharp.random.Random;
  */
 class World
 {
+    public static var lastInstance(default, null):World;
+
     public var seed(default, null):Int;
+    public var mapAreas(default, null):Array<MapArea> =
+    [
+        new MapArea("Silver Forest", 0xFF999999, true),
+        new MapArea("Ice Temple", 0xFFaaccee),
+        new MapArea("Cave", 0xFF553311)
+    ];
+
     private var storyTemplate:StoryTemplate;
     private var seededRandom:Random;
 
@@ -27,5 +37,6 @@ class World
 
         this.seededRandom = new Random(this.seed);
         this.storyTemplate = StoryTemplate.generate(this.seededRandom);
+        World.lastInstance = this;
     }
 }

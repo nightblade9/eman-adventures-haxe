@@ -2,6 +2,7 @@ package emanadventures.view.states;
 
 import emanadventures.io.JsonReader;
 import emanadventures.view.entities.MapPlayer;
+import emanadventures.view.states.MapAreaSelectState;
 import flixel.FlxG;
 import flixel.util.FlxColor;
 import helix.core.HelixState;
@@ -44,7 +45,7 @@ class HomeState extends HelixState
 		if (player.x >= exit.x && player.x <= exit.x + exit.width && 
 			player.y >= exit.y && player.y <= exit.y + exit.height)
 		{
-			FlxG.switchState(new AreaSelectState());
+			FlxG.switchState(new MapAreaSelectState());
 		}
 	}
 }

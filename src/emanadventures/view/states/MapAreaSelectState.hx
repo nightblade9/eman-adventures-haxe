@@ -1,6 +1,6 @@
 package emanadventures.view.states;
 
-import emanadventures.model.MapArea;
+import emanadventures.model.World;
 import flixel.FlxG;
 import flixel.util.FlxColor;
 import helix.core.HelixState;
@@ -9,21 +9,15 @@ import helix.core.HelixSprite;
 class MapAreaSelectState extends HelixState
 {
     private static inline var PADDING:Int = 64;
-
-    // TODO: replace with real classes
-    private var worldMapAreas = [
-        new MapArea("Silver Forest", 0xFF999999, true),
-        new MapArea("Ice Temple", 0xFFaaccee),
-        new MapArea("Cave", 0xFF553311)
-    ];
-
+    
 	override public function create():Void
 	{
         this.bgColor = FlxColor.BLACK;
+        var world = World.lastInstance;
 
-        for (i in 0 ... worldMapAreas.length)
+        for (i in 0 ... world.mapAreas.length)
         {
-            var mapArea = worldMapAreas[i];
+            var mapArea = world.mapAreas[i];
 
             if (mapArea.isDiscovered)
             {
@@ -31,7 +25,7 @@ class MapAreaSelectState extends HelixState
 
                 new HelixSprite("assets/images/area-icon.png").move(x, 150)
                 .onClick(function() {
-                    var nextMapArea = i < worldMapAreas.length - 1 ? worldMapAreas[i + 1] : null;
+                    var nextMapArea = i < world.mapAreas.length - 1 ? world.mapAreas[i + 1] : null;
                     FlxG.switchState(new MapState(mapArea, nextMapArea));
                 });
             }
