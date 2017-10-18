@@ -1,7 +1,7 @@
 language: haxe
 haxe:
   - "3.4.2"
-neko: "2.0.0"
+neko: "2.1.0"
 hxml:
   - test.hxml
 install:
