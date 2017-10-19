@@ -1,7 +1,7 @@
-package emanadventures.model;
+package emanadventures.models;
 
-import emanadventures.model.MapArea;
-import emanadventures.model.templates.StoryTemplate;
+import emanadventures.models.MapArea;
+import emanadventures.models.templates.StoryTemplate;
 import haxesharp.random.Random;
 
 /**

@@ -1,8 +1,8 @@
 package emanadventures.generators;
 
-import emanadventures.model.templates.StoryTemplate;
-import emanadventures.model.Artifact;
-import emanadventures.model.Story;
+import emanadventures.models.templates.StoryTemplate;
+import emanadventures.models.Artifact;
+import emanadventures.models.Story;
 
 using haxesharp.collections.Linq;
 import haxesharp.random.Random;

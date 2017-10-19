@@ -1,6 +1,6 @@
 package emanadventures.view.states;
 
-import emanadventures.model.World;
+import emanadventures.models.World;
 import flixel.FlxG;
 import flixel.util.FlxColor;
 import helix.core.HelixState;

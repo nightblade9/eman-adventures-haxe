@@ -1,4 +1,4 @@
-package emanadventures.model;
+package emanadventures.models;
 
 /**
 An actual story, with concrete characters, artifacts, events, etc.

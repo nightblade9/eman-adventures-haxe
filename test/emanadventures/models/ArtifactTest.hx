@@ -1,4 +1,4 @@
-package emanadventures.model;
+package emanadventures.models;
 
 import haxesharp.test.Assert;
 

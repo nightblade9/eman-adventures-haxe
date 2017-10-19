@@ -1,6 +1,6 @@
 package emanadventures.view.states;
 
-import emanadventures.model.MapArea;
+import emanadventures.models.MapArea;
 import emanadventures.view.entities.MapPlayer;
 import emanadventures.view.states.HomeState;
 import flixel.FlxG;

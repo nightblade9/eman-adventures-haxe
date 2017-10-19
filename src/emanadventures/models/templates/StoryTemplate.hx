@@ -1,4 +1,4 @@
-package emanadventures.model.templates;
+package emanadventures.models.templates;
 
 import haxesharp.random.Random;
 import haxesharp.text.Regex;

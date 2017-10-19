@@ -1,6 +1,6 @@
 package;
 
-import emanadventures.model.World;
+import emanadventures.models.World;
 import flixel.FlxGame;
 import openfl.display.Sprite;
 

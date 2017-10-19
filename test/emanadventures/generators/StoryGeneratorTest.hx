@@ -1,9 +1,9 @@
 package emanadventures.generators;
 
 import emanadventures.generators.StoryGenerator;
-import emanadventures.model.Story;
-import emanadventures.model.templates.EventTemplate;
-import emanadventures.model.templates.StoryTemplate;
+import emanadventures.models.Story;
+import emanadventures.models.templates.EventTemplate;
+import emanadventures.models.templates.StoryTemplate;
 
 import haxesharp.random.Random;
 import haxesharp.test.Assert;
