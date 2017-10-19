@@ -36,7 +36,7 @@
 	<haxelib name="helix" />
 	<haxelib name="flixel" />
 	<haxelib name="haxesharp" />
-	<haxelib name="PathFinder" />
+	<haxelib name="Pathfinder" />
 
 	<!--In case you want to use the addons package-->
 	<!--<haxelib name="flixel-addons" />-->
