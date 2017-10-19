@@ -29,10 +29,22 @@ class MapState extends HelixState
         // Start in the top-middle of the room
 		player.move((this.width - player.width) / 2, player.height);
 
+        var r = new Random();
+
+        this.generateKey(r, player);
+        this.generateEnemies(r);
+    }
+
+    override public function update(elapsedSeconds:Float):Void
+    {
+        super.update(elapsedSeconds);
+    }
+
+    private function generateKey(r:Random, player:MapPlayer):Void
+    {
         if (this.successor != null)
         {
             this.key = new HelixSprite("assets/images/key.png");
-            var r = new Random();
             var x = new Random().next(0, Std.int(this.width - key.width));
             // Somewhere below the player
             var y = r.next(Std.int(player.y + player.height), Std.int(this.height - key.height));
@@ -45,8 +57,17 @@ class MapState extends HelixState
         }
     }
 
-    override public function update(elapsedSeconds:Float):Void
+    private function generateEnemies(r:Random):Void
     {
-        super.update(elapsedSeconds);
+        var enemy = new HelixSprite("assets/images/enemy.png");
+        var x = new Random().next(0, Std.int(this.width - key.width));
+        // Somewhere below the player
+        var y = r.next(Std.int(player.y + player.height), Std.int(this.height - enemy.height));
+        // TODO: make sure that space is unoccupied by key
+        enemy.move(x, y);
+
+        player.collide(enemy, function(p, e) {
+            trace("BATTLE~!");
+        });
     }
 }
