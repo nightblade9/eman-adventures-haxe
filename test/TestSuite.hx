@@ -1,5 +1,6 @@
 import massive.munit.TestSuite;
 
+import emanadventures.models.battle.BattleMapTest;
 import emanadventures.models.ArtifactTest;
 import emanadventures.models.WorldTest;
 import emanadventures.models.templates.EventTemplateTest;
@@ -19,6 +20,7 @@ class TestSuite extends massive.munit.TestSuite
 	{
 		super();
 
+		add(emanadventures.models.battle.BattleMapTest);
 		add(emanadventures.models.ArtifactTest);
 		add(emanadventures.models.WorldTest);
 		add(emanadventures.models.templates.EventTemplateTest);
