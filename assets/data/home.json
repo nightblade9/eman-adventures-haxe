@@ -1,10 +1,10 @@
 {
     "walls": [
-        [0, 0, "horizontal"], // top
-        [0, 434, "horizontal-half"],  // bottom-left
-        [472, 434, "horizontal-half"],  // bottom-right
-        [0, 0, "vertical"], // left
-        [784, 0, "vertical"] // right
+        [0, 0, 850, 16], // top
+        [0, 434, 328, 16],  // bottom-left
+        [472, 434, 328, 16],  // bottom-right
+        [0, 0, 16, 450], // left
+        [784, 0, 16, 450] // right
     ],
     "exit":
     {

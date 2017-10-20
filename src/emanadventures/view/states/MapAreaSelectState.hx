@@ -23,7 +23,7 @@ class MapAreaSelectState extends HelixState
             {
                 var x = PADDING + ((i + 1) * 2 * PADDING);
 
-                new HelixSprite("assets/images/area-icon.png").move(x, 150)
+                new HelixSprite(null, { width: 64, height: 64, colour: 0xFFffff00 }).move(x, 150)
                 .onClick(function() {
                     var nextMapArea = i < world.mapAreas.length - 1 ? world.mapAreas[i + 1] : null;
                     FlxG.switchState(new MapState(mapArea, nextMapArea));

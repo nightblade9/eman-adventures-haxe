@@ -8,7 +8,7 @@ class MapPlayer extends HelixSprite
     
     public function new()
     {
-        super("assets/images/player.png");
+        super(null, { width: 48, height: 48, colour: 0xFFffffff});
         this.moveWithKeyboard(PLAYER_VELOCITY);
     }
 }

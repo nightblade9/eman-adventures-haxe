@@ -44,7 +44,7 @@ class MapState extends HelixState
     {
         if (this.successor != null)
         {
-            this.key = new HelixSprite("assets/images/key.png");
+            this.key = new HelixSprite(null, { width: 32, height: 16, colour: 0xFFffff00 });
             var x = new Random().next(0, Std.int(this.width - key.width));
             // Somewhere below the player
             var y = r.next(Std.int(player.y + player.height), Std.int(this.height - key.height));
@@ -59,7 +59,7 @@ class MapState extends HelixState
 
     private function generateEnemies(r:Random):Void
     {
-        var enemy = new HelixSprite("assets/images/enemy.png");
+        var enemy = new HelixSprite(null, { width: 32, height: 32, colour: 0xFFff0000 });
         var x = new Random().next(0, Std.int(this.width - key.width));
         // Somewhere below the player
         var y = r.next(Std.int(player.y + player.height), Std.int(this.height - enemy.height));

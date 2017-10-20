@@ -28,9 +28,10 @@ class HomeState extends HelixState
 		{
 			var x = wallSize[0];
 			var y = wallSize[1];
-			var orientation = wallSize[2];
+			var width = wallSize[2];
+			var height = wallSize[3];
 
-			var wall = new HelixSprite('assets/images/wall-${orientation}.png').collisionImmovable().move(x, y);
+			var wall = new HelixSprite(null, { width: width, height: height, colour: 0xFFff8800 }).collisionImmovable().move(x, y);
 			player.collideResolve(wall);
 		}
 
