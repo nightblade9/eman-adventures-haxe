@@ -5,7 +5,6 @@
 -lib haxesharp
 -lib helix
 -lib flixel
--lib Pathfinder
 
 -cp src
 -cp test

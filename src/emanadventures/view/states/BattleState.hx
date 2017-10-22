@@ -2,7 +2,7 @@ package emanadventures.view.states;
 
 import helix.core.HelixState;
 
-class GridBattleState extends HelixState
+class BattleState extends HelixState
 {
     override public function create():Void
     {

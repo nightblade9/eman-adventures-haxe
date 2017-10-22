@@ -67,7 +67,7 @@ class MapState extends HelixState
         enemy.move(x, y);
 
         player.collide(enemy, function(p, e) {
-            FlxG.switchState(new GridBattleState());
+            trace("BATTLE!");
         });
     }
 }
