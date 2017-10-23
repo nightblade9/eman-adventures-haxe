@@ -1,0 +1,10 @@
+{
+    "enemies": [
+        {
+            "name": "Slime",
+            "health": 40,
+            "attack": 5,
+            "speed": 3      
+        }
+    ]
+}
