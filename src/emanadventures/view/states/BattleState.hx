@@ -1,5 +1,6 @@
 package emanadventures.view.states;
 
+import flixel.util.FlxColor;
 import helix.core.HelixState;
 
 class BattleState extends HelixState

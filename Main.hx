@@ -10,6 +10,6 @@ class Main extends Sprite
 	{
 		super();
 		new World(); // Initialize world instance.
-		addChild(new FlxGame(0, 0, emanadventures.view.states.HomeState, 1, 60, 60, true));
+		addChild(new FlxGame(0, 0, emanadventures.view.states.BattleState, 1, 60, 60, true));
 	}
 }
