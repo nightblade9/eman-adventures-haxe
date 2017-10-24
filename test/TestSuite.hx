@@ -1,6 +1,8 @@
 import massive.munit.TestSuite;
 
 import emanadventures.models.battle.TurnCalculatorTest;
+import emanadventures.models.battle.BattleEntityTest;
+import emanadventures.models.components.HealthComponentTest;
 import emanadventures.models.ArtifactTest;
 import emanadventures.models.WorldTest;
 import emanadventures.models.templates.EventTemplateTest;
@@ -21,6 +23,8 @@ class TestSuite extends massive.munit.TestSuite
 		super();
 
 		add(emanadventures.models.battle.TurnCalculatorTest);
+		add(emanadventures.models.battle.BattleEntityTest);
+		add(emanadventures.models.components.HealthComponentTest);
 		add(emanadventures.models.ArtifactTest);
 		add(emanadventures.models.WorldTest);
 		add(emanadventures.models.templates.EventTemplateTest);

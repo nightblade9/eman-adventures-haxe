@@ -1,11 +1,19 @@
 package emanadventures.models.battle;
 
+import haxesharp.exceptions.ArgumentException;
 using haxesharp.test.Assert;
 
 class TurnCalculatorTest
 {
     @Test
-    public function calculateNextTurnGetsFastestEntity():Void
+    public function constructorThrowsIfEntitiesAreNullOrEmpty()
+    {
+        Assert.throws(ArgumentException, function() { new TurnCalculator(null); });
+        Assert.throws(ArgumentException, function() { new TurnCalculator( [] ); });
+    }
+
+    @Test
+    public function calculateNextTurnGetsFastestEntity()
     {
         var player = new AgileEntity(7);
         var slime = new AgileEntity(3);

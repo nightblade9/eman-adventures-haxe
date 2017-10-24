@@ -4,7 +4,7 @@
             "name": "Slime",
             "health": 40,
             "attack": 5,
-            "speed": 3      
+            "agility": 3      
         }
     ]
 }
