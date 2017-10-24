@@ -20,14 +20,10 @@ class BattleEntityTest
     }
 
     @Test
-    public function currentHealthReturnsConstructorSpecifiedValue()
+    public function currentAndTotalHealthReturnConstructorSpecifiedValue()
     {
-
-    }
-
-    @Test
-    public function totalHealthReturnsConstructorSpecifiedValue()
-    {
-
+        var b = new BattleEntity(50, 1);
+        Assert.that(b.currentHealth, Is.equalTo(50));
+        Assert.that(b.totalHealth, Is.equalTo(50));
     }
 }

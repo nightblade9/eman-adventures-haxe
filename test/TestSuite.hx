@@ -4,6 +4,7 @@ import emanadventures.generators.StoryGeneratorTest;
 import emanadventures.io.JsonReaderTest;
 import emanadventures.models.ArtifactTest;
 import emanadventures.models.battle.BattleEntityTest;
+import emanadventures.models.components.HealthComponentTest;
 import emanadventures.models.templates.EventTemplateTest;
 import emanadventures.models.templates.StoryTemplateTest;
 import emanadventures.models.WorldTest;
@@ -24,6 +25,7 @@ class TestSuite extends massive.munit.TestSuite
 		add(emanadventures.io.JsonReaderTest);
 		add(emanadventures.models.ArtifactTest);
 		add(emanadventures.models.battle.BattleEntityTest);
+		add(emanadventures.models.components.HealthComponentTest);
 		add(emanadventures.models.templates.EventTemplateTest);
 		add(emanadventures.models.templates.StoryTemplateTest);
 		add(emanadventures.models.WorldTest);
