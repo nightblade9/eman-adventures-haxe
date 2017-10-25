@@ -8,8 +8,8 @@ class TurnCalculatorTest
     @Test
     public function constructorThrowsIfEntitiesAreNullOrEmpty()
     {
-        Assert.throws(ArgumentException, function() { new TurnCalculator(null); });
-        Assert.throws(ArgumentException, function() { new TurnCalculator( [] ); });
+        Assert.throws(ArgumentException, (_) => new TurnCalculator(null));
+        Assert.throws(ArgumentException, (_) => new TurnCalculator( [] ));
     }
 
     @Test

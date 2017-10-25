@@ -8,8 +8,8 @@ class HealthComponentTest
     @Test
     public function constructorThrowsIfHesalthIsNonNegative()
     {
-        Assert.throws(ArgumentException, function() { new HealthComponent(-1); });
-        Assert.throws(ArgumentException, function() { new HealthComponent(0); });
+        Assert.throws(ArgumentException, (_) => new HealthComponent(-1));
+        Assert.throws(ArgumentException, (_) => new HealthComponent(0));
     }
 
     @Test
