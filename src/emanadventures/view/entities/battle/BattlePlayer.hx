@@ -1,6 +1,7 @@
 package emanadventures.view.entities.battle;
 
 import helix.core.HelixSprite;
+using helix.core.HelixSpriteFluentApi;
 
 class BattlePlayer extends HelixSprite
 {

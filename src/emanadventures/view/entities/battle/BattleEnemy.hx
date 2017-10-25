@@ -2,6 +2,7 @@ package emanadventures.view.entities.battle;
 
 import emanadventures.models.battle.BattleEntity;
 import helix.core.HelixSprite;
+using helix.core.HelixSpriteFluentApi;
 
 class BattleEnemy extends HelixSprite
 {
